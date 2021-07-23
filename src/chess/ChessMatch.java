@@ -1,7 +1,6 @@
 package chess;
 
 import boardGame.Board;
-import boardGame.Position;
 import chess.pieces.King;
 import chess.pieces.Peon;
 import chess.pieces.Rook;
@@ -23,30 +22,33 @@ public class ChessMatch {
 		return matriz;
 	}
 	
+	private void placeNewPiece(char column, int row, ChessPiece piece) {
+		board.placePiece(piece, new ChessPosition(column,row).toPosition());
+	}
 	private void initialSetup() {
-		board.placePiece(new Rook(board,Color.BLACK), new Position(0,0));
-		board.placePiece(new Rook(board,Color.BLACK), new Position(0,7));
-		board.placePiece(new King(board,Color.BLACK), new Position(0,4));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,0));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,1));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,2));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,3));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,4));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,5));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,6));
-		board.placePiece(new Peon(board,Color.BLACK), new Position(1,7));
+		placeNewPiece('a',8,new Rook(board,Color.BLACK));
+		placeNewPiece('h',8,new Rook(board,Color.BLACK));
+		placeNewPiece('e',8,new King(board,Color.BLACK));
+		placeNewPiece('a',7,new Peon(board,Color.BLACK));
+		placeNewPiece('b',7,new Peon(board,Color.BLACK));
+		placeNewPiece('c',7,new Peon(board,Color.BLACK));
+		placeNewPiece('d',7,new Peon(board,Color.BLACK));
+		placeNewPiece('e',7,new Peon(board,Color.BLACK));
+		placeNewPiece('f',7,new Peon(board,Color.BLACK));
+		placeNewPiece('g',7,new Peon(board,Color.BLACK));
+		placeNewPiece('h',7,new Peon(board,Color.BLACK));
 		
 
-		board.placePiece(new Rook(board,Color.WHITE), new Position(7,0));
-		board.placePiece(new Rook(board,Color.WHITE), new Position(7,7));
-		board.placePiece(new King(board,Color.WHITE), new Position(7,4));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,0));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,1));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,2));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,3));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,4));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,5));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,6));
-		board.placePiece(new Peon(board,Color.WHITE), new Position(6,7));
+		placeNewPiece('a',1,new Rook(board,Color.WHITE));
+		placeNewPiece('h',1,new Rook(board,Color.WHITE));
+		placeNewPiece('e',1,new King(board,Color.WHITE));
+		placeNewPiece('a',2,new Peon(board,Color.WHITE));
+		placeNewPiece('b',2,new Peon(board,Color.WHITE));
+		placeNewPiece('c',2,new Peon(board,Color.WHITE));
+		placeNewPiece('d',2,new Peon(board,Color.WHITE));
+		placeNewPiece('e',2,new Peon(board,Color.WHITE));
+		placeNewPiece('f',2,new Peon(board,Color.WHITE));
+		placeNewPiece('g',2,new Peon(board,Color.WHITE));
+		placeNewPiece('h',2,new Peon(board,Color.WHITE));
 	}
 }

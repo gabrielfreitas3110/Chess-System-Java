@@ -6,7 +6,7 @@ public class Board {
 	private Piece[][] pieces;
 	
 	public Board(int rows, int columns) {
-		if(rows < 1 || columns < 1) {
+		if(rows < 1 || rows > 8 || columns < 1 || columns > 8) {
 			throw new BoardException("Error in creating board: wrong rows or columns.");
 		}
 		this.rows = rows;
