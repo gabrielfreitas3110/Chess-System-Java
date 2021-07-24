@@ -14,4 +14,10 @@ public class Peon extends ChessPiece{
 	public String toString() {
 		return("P");
 	}
+
+	@Override
+	public boolean[][] possibleMoves() {
+		boolean[][] matriz = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		return matriz;
+	}
 }
